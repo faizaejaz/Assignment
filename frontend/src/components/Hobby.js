@@ -17,7 +17,7 @@ class Hobby extends Component {
         this.deleteHobby = this.deleteHobby.bind(this);
 
         this.state = {
-            currentTutorial: {
+            currentHobby: {
                 id: null,
                 username: "",
                 passion: null,
@@ -84,17 +84,6 @@ class Hobby extends Component {
         });
     }
 
-    // onChangeDescription(e) {
-    //     const description = e.target.value;
-
-    //     this.setState(prevState => ({
-    //         currentTutorial: {
-    //             ...prevState.currentTutorial,
-    //             description: description
-    //         }
-    //     }));
-    // }
-
     getHobby(id) {
         HobbiesDataService.get(id)
             .then(response => {
@@ -107,29 +96,6 @@ class Hobby extends Component {
                 console.log(e);
             });
     }
-
-    // updatePublished(status) {
-    //     var data = {
-    //         id: this.state.currentTutorial.id,
-    //         title: this.state.currentTutorial.title,
-    //         description: this.state.currentTutorial.description,
-    //         published: status
-    //     };
-
-    //     HobbiesDataService.update(this.state.currentTutorial.id, data)
-    //         .then(response => {
-    //             this.setState(prevState => ({
-    //                 currentTutorial: {
-    //                     ...prevState.currentTutorial,
-    //                     published: status
-    //                 }
-    //             }));
-    //             console.log(response.data);
-    //         })
-    //         .catch(e => {
-    //             console.log(e);
-    //         });
-    // }
 
     updateHobby() {
         HobbiesDataService.update(
@@ -210,29 +176,10 @@ class Hobby extends Component {
                                 />
                             </div>
 
-                            {/* <div className="form-group">
-                                <label>
-                                    <strong>Status: </strong>
-                                </label>
-                                {currentTutorial.published ? "Published" : "Pending"}
-                            </div> */}
+                           
                         </form>
                         <div className={classes.buttonWrapper}>
-                            {/* {currentHobby.published ? (
-                                <Button
-                                    className={`${classes.publish} ${classes.button}`}
-                                    onClick={() => this.updatePublished(false)}
-                                >
-                                    UnPublish
-              </Button>
-                            ) : (
-                                    <Button
-                                        className={`${classes.publish} ${classes.button}`}
-                                        onClick={() => this.updatePublished(true)}
-                                    >
-                                        Publish
-              </Button>
-                                )} */}
+                           
                             <Button
                                 className={`${classes.delete} ${classes.button}`}
                                 onClick={this.deleteHobby}
